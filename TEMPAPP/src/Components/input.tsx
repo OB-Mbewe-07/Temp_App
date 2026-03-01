@@ -1,7 +1,11 @@
-import { useState } from "react";
-import fetchWeather from "../data/data";
+import type React from "react"
 
-export default function InputBox({handleChanges , str}) {
+interface props{
+    handleChanges: (e:React.ChangeEvent<HTMLInputElement>) => void;
+    str: string; 
+}
+
+export default function InputBox({handleChanges , str}: props) {
   return (
     <div>
       <label htmlFor="input">{str}</label>
@@ -10,22 +14,11 @@ export default function InputBox({handleChanges , str}) {
   )
 }
 
-export function ListCities(){
-    const listCities = ["London","New york","Paris"];
-    const [weather, setWeather] = useState(0);
+export function DisplayArea({value}:{value: number}){
     return(
-        <div>
-            <ul>
-                {listCities.map((city) =>{
-                    return <li key={listCities.indexOf(city) + 1} onClick={()=> {setWeather(fetchWeather(city))}}>{city} Tempreture in Celcius</li>
-                })}
-            </ul>
-            <div>
-                {weather!==0 && 
-                weather}
-            </div>
-            
+        <div className="displayValue">
+            {value}
         </div>
-       
     )
 }
+
