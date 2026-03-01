@@ -1,14 +1,32 @@
-export default function formulae(Farenheid: number , celcius:number, isConvertedToFarenHeid: boolean){
+type ConversionTypes = "FarenHeidtoCelcius" | "CelciusToFarenheid" | "KelvinToCelcius";
+
+export default function formulae(value: number , operation: ConversionTypes):number{
   function celciusToFarenheid():number{
-    return (9/5) * celcius + 32;
+    return (9/5) * value + 32;
   }
 
   function farenheidToCelcius():number{
-    return (5/9) * (Farenheid - 32);
+    return (5/9) * (value - 32);
   }
 
-  let finalValue = isConvertedToFarenHeid ? celciusToFarenheid() : farenheidToCelcius();
-  console.log(finalValue);
+  function KelvinToCelcius(){
+    return value - 273.15;
+  }
+
+  let tempreture = 0;
+  switch(operation){
+    case "CelciusToFarenheid":
+        tempreture = celciusToFarenheid();
+        break;
+    case "FarenHeidtoCelcius":
+        tempreture = farenheidToCelcius();
+        break;
+    case "KelvinToCelcius":
+        tempreture = KelvinToCelcius();
+        break;
+  }
+
+  return tempreture;
 }
 
 export function convertValuesToWeatherLogicStr(value: number):string {
