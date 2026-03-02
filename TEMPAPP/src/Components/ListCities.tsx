@@ -1,4 +1,4 @@
-import fetchWeather from "../data/data"; 
+import fetchWeather from "../data/data";
 import { DisplayArea } from "./input";
 import { useState } from "react";
 
