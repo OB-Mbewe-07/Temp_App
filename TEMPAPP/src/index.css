@@ -1,3 +1,40 @@
-li{
-  cursor: pointer;
+.Input{
+  width: 19rem;
+  margin-left: 1rem; 
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
+}
+
+.CustomList{
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 21px;
+}
+
+.items{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn{
+  margin: 4% 0;
+}
+
+.flexElements{
+  display: flex;
+  justify-content: center;
+}
+
+.displayValue{
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
 }
